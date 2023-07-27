@@ -30,4 +30,13 @@ const productSchema = new mongoose.Schema({
   },
 });
 
+// Overrides the default _id and __v associated to a MongoDB
+// productSchema.set("toJSON", {
+//   transform: (doc, returnedObj) => {
+//     returnedObj.id = returnedObj._id.toString();
+//     delete returnedObj._id;
+//     delete returnedObj.__v;
+//   }
+// })
+
 module.exports = mongoose.model("Product", productSchema);
