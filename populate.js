@@ -11,6 +11,7 @@ const startPopulatingDB = async () => {
     await Product.deleteMany();
     await Product.create(jsonProducts);
     console.log("Successfully populated DB");
+    process.exit(0);
   } catch (err) {
     console.log(err);
   }
